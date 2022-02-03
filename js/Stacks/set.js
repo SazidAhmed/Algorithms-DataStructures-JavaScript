@@ -77,23 +77,37 @@ function mySet() {
 }
 var setA = new mySet();  
 var setB = new mySet();  
-setA.add("a");  
-setB.add("b");  
-setB.add("c");  
-setB.add("a");  
-setB.add("d");  
-console.log(setA.subset(setB));
-console.log(setA.intersection(setB).values());
-console.log(setB.difference(setA).values());
+setA.add("apple");  
+setA.add("orange");  
+setB.add("apple");
+setB.add("orange");
+setB.add("pineapple");  
+setB.add("liche");
+console.log("set A : ", setA.values());
+console.log("set B : ", setB.values());
+console.log("Set A is subset of Set B: ", setA.subset(setB));
+console.log("Union set : ", setA.union(setB).values());
+console.log("Intersection set : ", setA.intersection(setB).values());
+console.log("Difference of two sets :", setB.difference(setA).values());
 
-var setC = new Set();  
-var setD = new Set();  
-setC.add("a");  
-setD.add("b");  
-setD.add("c");  
-setD.add("a");  
-setD.add("d");  
-console.log(setD.values())
-setD.delete("a");
-console.log(setD.has("a"));
-console.log(setD.add("d"));
+setB.remove("pineapple");
+console.log("set has the element : ", setB.has("pineapple"));
+setB.add("pineapple");
+console.log("set has the element : ", setB.has("pineapple"));
+
+//Using ES6
+// var setA = new Set();  
+// var setB = new Set();  
+// setA.add("apple");  
+// setA.add("orange");  
+// setB.add("apple");
+// setB.add("orange");
+// setB.add("pineapple");  
+// setB.add("liche");
+// console.log("set A : ", setA.values());
+// console.log("set B : ", setB.values());
+// setB.delete("pineapple");
+// console.log("set has the element : ", setB.has("pineapple"));
+// setB.add("pineapple");
+// console.log("set has the element : ", setB.has("pineapple"));
+

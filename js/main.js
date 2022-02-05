@@ -8,16 +8,17 @@ var hash = (string, max) => {
     return hash % max;
   };
   
-  let HashTable = function() {
-  
+  class HashTable {
+  constructor() {
+
     let storage = [];
     const storageLimit = 14;
-    
-    this.print = function() {
-      console.log(storage)
-    }
-  
-    this.add = function(key, value) {
+
+    this.print = function () {
+      console.log(storage);
+    };
+
+    this.add = function (key, value) {
       var index = hash(key, storageLimit);
       if (storage[index] === undefined) {
         storage[index] = [
@@ -36,8 +37,8 @@ var hash = (string, max) => {
         }
       }
     };
-  
-    this.remove = function(key) {
+
+    this.remove = function (key) {
       var index = hash(key, storageLimit);
       if (storage[index].length === 1 && storage[index][0][0] === key) {
         delete storage[index];
@@ -49,8 +50,8 @@ var hash = (string, max) => {
         }
       }
     };
-  
-    this.lookup = function(key) {
+
+    this.lookup = function (key) {
       var index = hash(key, storageLimit);
       if (storage[index] === undefined) {
         return undefined;
@@ -62,16 +63,18 @@ var hash = (string, max) => {
         }
       }
     };
+
+  }
+}
   
-  };
   
-  
-  console.log(hash('quincy', 10))
+  console.log(hash('abc', 10))
   
   let ht = new HashTable();
-  ht.add('beau', 'person');
+  ht.add('abc', 'person');
   ht.add('fido', 'dog');
-  ht.add('rex', 'dinosour');
-  ht.add('tux', 'penguin')
-  console.log(ht.lookup('tux'))
+  // ht.add('rex', 'dinosour');
+  // ht.add('tux', 'penguin')
+  console.log(ht.lookup('abc'))
+
   ht.print();

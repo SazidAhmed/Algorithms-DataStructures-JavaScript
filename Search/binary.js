@@ -1,6 +1,7 @@
 //Divide and conquer
 // 1,2,3,4,5,6,7,8,9
-// 
+// should be sorted array
+// constant time  O(1) / O(log(n)) / logBase2n
 
 function binary(arr, val){
     let start = 0;
